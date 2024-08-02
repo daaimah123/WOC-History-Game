@@ -1,6 +1,6 @@
 ![game](https://github.com/user-attachments/assets/cfe47ac3-bf68-47dc-8844-961d6b8fe6b4)
 
-This is a simple guessing game to educate its user about the various women of color and their contributions to history.
+This is a simple HTML, CSS, JavaScript, and DOM Manipulation guessing game to educate its user about the various women of color and their contributions to history.
 
 Functionality:
 - Start button brings user into the game with 4 button options with 3 incorrect names and 1 correct
