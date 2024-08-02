@@ -8,3 +8,6 @@ Functionality:
 - Correct button selection disables all other options and moves the user to the next image
 - Images and their respective descriptions are generated randomly
 - Restart button reloads the previous image option and resets the score to zero
+
+ADDING SOME TEXT
+
