@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Guessing Game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<button id="startButton" onclick="startGame()">Start Game</button>
+<button id="exitButton" onclick="resetGame()" style="display:none;">Restart Game</button>
+    
+<div id="gameContainer">
+    <img id="gameImage" src="" alt="Guessing Game Image">
+    <p id="imageDescription"></p> <!-- Element for displaying image description -->
+    <div id="feedbackMessage"></div> <!-- Element for displaying feedback -->
+    <div id="optionsContainer">
+        <!-- Options will be dynamically generated -->
+    </div>
+    <span id="scoreDisplay">Score: 0</span>
+</div>
+    
+
+<script src="script.js"></script>
+</body>
+</html>

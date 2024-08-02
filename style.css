@@ -1,0 +1,36 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+#gameContainer {
+    text-align: center;
+}
+
+#gameImage {
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.optionButton {
+    margin: 5px;
+}
+
+.correctFeedback {
+    color: green;
+}
+
+.incorrectFeedback {
+    color: red;
+}
