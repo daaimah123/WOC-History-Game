@@ -1,4 +1,8 @@
 let score = 0;
+let gamePlayed = function hasGameBeenPlayed(score) {
+    return score != null && 0 <= score;
+  }
+
 const images = [
     {
         name: "Rosa Parks", 
@@ -85,14 +89,39 @@ const images = [
         src: "https://explore.rebelgirls.com/wp-content/uploads/2024/06/Noor-Inayat-Khan-3.png",
         description: "An international woman of mystery! Born in 1914 in Moscow, Russia, and raised in the United Kingdom and France, was a brave World War II heroine and secret agent. The daughter of an Indian father and an American mother, Noor was a descendant of Indian royalty and a talented writer and musician. During World War II, she joined the British Special Operations Executive (SOE) and became the first female radio operator sent into occupied France to aid the French Resistance. Her courage, resourcefulness, and determination made her a valuable asset in the fight against the Nazis."},
 ];
+
 const optionsContainer = document.getElementById("optionsContainer");
 const gameImage = document.getElementById("gameImage");
 const scoreDisplay = document.getElementById("scoreDisplay");
 const startButton = document.getElementById("startButton");
 
+function updateScore() {
+    scoreDisplay.textContent = `Score: ${score}`;
+}
+
+function toggleRestartOrExit() {
+    if (!gamePlayed) {
+        // If the game hasn't been played, alert user
+        alert("you haven't played the game yet");
+    } else {
+        // If the game has been played, restart it
+        restartGame();
+    }
+}
+
+function restartGame() {
+    // Reset the score to zero
+    score = 0;
+    // Update the score display in the UI
+    updateScore();
+    // Now restart the game normally
+    startGame(); // Call your start game function
+}
+
+
 function startGame() {
     gameStarted = true;
-    document.getElementById("startButton").disabled = true;
+    document.getElementById("startButton").style.display = "none";
     document.getElementById("exitButton").style.display = "inline-block";
 
     optionsContainer.innerHTML = ''; // Clear existing options
@@ -153,42 +182,12 @@ function startGame() {
     });
 }
 
-function resetGame() {
-    gameStarted = false;
-    document.getElementById("startButton").disabled = false;
-    document.getElementById("exitButton").style.display = "none";
-    // Reset game state here
-    // For example, clear the game container and reset scores
-    document.getElementById("gameContainer").innerHTML = '';
-    // Any other necessary reset actions
-}
-
-// Example usage of resetGame()
-document.getElementById("exitButton").addEventListener("click", function() {
-    resetGame();
-});
-
 function enableButtons(enable) {
     const buttons = document.querySelectorAll('.optionButton');
     buttons.forEach(button => {
         button.disabled = !enable; // Enable all buttons if enable is true
     });
 }
-
-function updateScore() {
-    scoreDisplay.textContent = `Score: ${score}`;
-}
-// const startButton = document.getElementById("startButton");
-
-// startButton.addEventListener('click', function() {
-//     if (this.textContent.trim() === 'Start') {
-//         startGame(); // Call your start game function
-//         this.textContent = 'Restart'; // Change button text to Restart
-//     } else {
-//         window.location.reload(); // Reload the page to restart the game
-//     }
-// });
-
 
 // Initialize game
 startButton.addEventListener("click", () => {

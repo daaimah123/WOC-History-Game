@@ -8,12 +8,15 @@
 <body>
 
 <button id="startButton" onclick="startGame()">Start Game</button>
-<button id="exitButton" onclick="resetGame()" style="display:none;">Restart Game</button>
+<button id="exitButton" onclick="toggleRestartOrExit()" style="display:none;">Restart</button>
     
 <div id="gameContainer">
-    <img id="gameImage" src="" alt="Guessing Game Image">
+    <img id="gameImage" src="https://static01.nyt.com/images/2020/07/24/multimedia/24suffrage-book-07/24suffrage-book-07-superJumbo.jpg" alt="Women of Color Standing Together">
+
     <p id="imageDescription"></p> <!-- Element for displaying image description -->
+    
     <div id="feedbackMessage"></div> <!-- Element for displaying feedback -->
+    
     <div id="optionsContainer">
         <!-- Options will be dynamically generated -->
     </div>
